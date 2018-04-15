@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+img {
+    width: 100%;
+}
+h1 {
+    font-family: 'Josefin Sans', sans-serif;
+}
+p {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+/*--------- menu -------*/
+
+ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 5;
+    padding: 0;
+    width: 100%;
+    top: 0;
+    overflow: hidden;
+    background-color: #47AD2E;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+li {
+    float: left;
+}
+
+a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.2em;
+    line-height: 20px;
+    color: #ffffff;
+}
+
+
+a:hover {
+    background-color: rgba(46, 134, 193, 0.9);
+}
+

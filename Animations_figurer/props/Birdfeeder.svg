@@ -1,0 +1,68 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 3px;
+      }
+
+      .cls-2 {
+        fill: #fabe78;
+      }
+
+      .cls-3 {
+        fill: #f7931e;
+      }
+
+      .cls-4 {
+        fill: #f9a94b;
+      }
+
+      .cls-5 {
+        fill: #ae5032;
+      }
+
+      .cls-6 {
+        fill: #442d1d;
+      }
+
+      .cls-7 {
+        fill: #875a39;
+      }
+    </style>
+  </defs>
+  <title>Birdfeeder</title>
+  <rect class="cls-1" x="81.5" y="77" width="71.5" height="35"/>
+  <g>
+    <circle class="cls-2" cx="116.5" cy="107.5" r="6.5"/>
+    <ellipse class="cls-2" cx="133.5" cy="108.5" rx="18.5" ry="7.5"/>
+    <ellipse class="cls-2" cx="101.5" cy="108.5" rx="18.5" ry="7.5"/>
+    <circle class="cls-2" cx="93.5" cy="105.5" r="6.5"/>
+    <ellipse class="cls-2" cx="137" cy="105.5" rx="10" ry="6.5"/>
+    <path class="cls-2" d="M90,106.17a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/>
+    <path class="cls-3" d="M92.67,105.5a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/>
+    <path class="cls-3" d="M99.33,106.5a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/>
+    <path class="cls-3" d="M94,102.17a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/>
+    <path class="cls-3" d="M108,106.17a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/>
+    <path class="cls-3" d="M102.67,103.5a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/>
+    <path class="cls-3" d="M89,106.83a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/>
+    <path class="cls-3" d="M114,106.17a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/>
+    <path class="cls-3" d="M119,104.17a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/>
+    <path class="cls-3" d="M123.67,108.17a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/>
+    <path class="cls-3" d="M128.33,105.17a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/>
+    <path class="cls-3" d="M134.33,107.83a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/>
+    <path class="cls-3" d="M137.33,102.83a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/>
+    <path class="cls-3" d="M141.67,107.17a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/>
+  </g>
+  <g>
+    <polygon class="cls-4" points="116.98 24.08 72 77 161.97 77 116.98 24.08"/>
+    <polygon class="cls-4" points="116.69 34.86 126 23.45 107.39 23.45 116.69 34.86"/>
+    <path class="cls-4" d="M117,76.5h45c0,3.57-20.31,6.5-45,6.5s-45-2.93-45-6.5v-.06Z"/>
+  </g>
+  <rect class="cls-5" x="111" y="28" width="11" height="4" rx="2" ry="2"/>
+  <ellipse class="cls-6" cx="116" cy="201" rx="36" ry="10"/>
+  <rect class="cls-7" x="71.5" y="108.5" width="89" height="10" rx="5" ry="5"/>
+  <rect class="cls-7" x="71.5" y="151.5" width="89" height="10" rx="5" ry="5" transform="translate(272.5 40.5) rotate(90)"/>
+</svg>
