@@ -127,15 +127,14 @@ a:hover {
 
 /*sætter manden i fast position*/
 
-.man_posiiton_in {
-    transform: translate(40vw, 0vw);
+.man_position_in {
+/*    transform: translate(40vw, 0vw);*/
+    left:40vw;
 }
 
 
 .manStand {
     background-position: 0% -600%;
-}
-
 }
 
 .feedBirds {
@@ -218,11 +217,13 @@ a:hover {
 
 @keyframes man_move_out_kf {
     0% {
-        transform: translate(30vw) scaleX(-1);
+        left: 20vw;
+        transform: scaleX(-1);
     }
 
     100% {
-        transform: translate(-50vw) scaleX(-1);
+        left: -30vw;
+        transform: scaleX(-1);
     }
 }
 
@@ -235,11 +236,11 @@ a:hover {
 
 @keyframes man_move_birdfeeder_kf {
     0% {
-        transform: translate(0);
+        transform: translate(-30vw);
     }
 
     100% {
-        transform: translate(65vw, -10vw);
+        transform: translate(25vw, -10vw);
     }
 }
 
@@ -260,7 +261,7 @@ a:hover {
 }
 
 .man_with_birdfeeder {
-    transform: translate(65vw, -10vw)
+    transform: translate(25vw, -10vw)
 }
 
 .man_move_away {
@@ -275,12 +276,15 @@ a:hover {
     }
 
     100% {
-        transform: translate(19vw, 0vw) scaleX(-1);
+        left: 20vw;
+        transform: scaleX(-1);
+/*        transform: translate(19vw, 0vw)*/
     }
 }
 
 .man_happy_position {
-    transform: translate(40vw, 0vw);
+    left: 20vw;
+/*    transform: translate(40vw, 0vw);*/
 }
 
 .manHappy {
@@ -332,7 +336,7 @@ a:hover {
     right: -65vw;
 }
 
-.bird_singing {
+.birdSinging {
     animation-name: sing_kf;
     animation-duration: 0.5s;
     animation-timing-function: steps(2);
@@ -565,19 +569,19 @@ a:hover {
         transform: translateX(0);
     }
     25% {
-        transform: translateX(-25vw);
+        transform: translateX(-35vw);
     }
 
     26% {
-        transform: translateX(-25vw) rotate(15deg) scaleX(-1);
+        transform: translateX(-35vw) rotate(15deg) scaleX(-1);
     }
 
     75% {
-        transform: translate(-25vw, 10vw) scaleX(-1);
+        transform: translate(-35vw, 10vw) scaleX(-1);
     }
 
     100% {
-        transform: translate(25vw, 10vw) scaleX(-1);
+        transform: translate(35vw, 10vw) scaleX(-1);
     }
 }
 
@@ -606,12 +610,12 @@ a:hover {
 }
 
 .squirrel_move_scare {
-    animation-name: squirrel_move_in_kf;
+    animation-name: squirrel_move_scare_kf;
     animation-duration: 0.3s;
     animation-iteration-count: 1;
 }
 
-@keyframes squirrel_move_in_kf {
+@keyframes squirrel_move_scare_kf {
     0% {
         transform: translate(-20vw, 20vw)
     }
@@ -626,7 +630,7 @@ a:hover {
 }
 
 .squirrelStand {
-    background-position: 0% -400%;
+    background-position: 0% -500%;
 }
 
 .squirrelScare {
@@ -748,11 +752,11 @@ a:hover {
 
 @keyframes move_Birdfeeder_kf {
     0% {
-        transform: translate(0);
+        transform: translate(-30vw);
     }
 
     100% {
-        transform: translate(70vw, -10vw);
+        transform: translate(25vw, -10vw);
     }
 }
 
