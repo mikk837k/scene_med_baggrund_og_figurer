@@ -1,3 +1,5 @@
+var catchCounter = 0;
+var myTimer;
 //elementer:
 //#main_char_container
 //#main_char_sprite
@@ -13,7 +15,6 @@
 //villain_sprite
 //lightbulb_container
 //lightbulb_sprite
-//
 //animation:
 //.man_move_in
 //.manWalkcycle
@@ -68,16 +69,28 @@ function setScene() {
     $("#bird1_sprite").addClass("birdSinging");
     $("#bird2_sprite").addClass("birdSinging");
     $("#bird3_sprite").addClass("birdSinging");
-    //    $("#bird_container").on("animationend", manMoves);
-    $(".startScene").on("click", manMoves)
+    $("#main_char_container").addClass("man_start_pos");
+    $("#villain_container").addClass("villain_start_pos");
+
+    $("#lightbulb_container").addClass("lightbulb_start_pos");
+    $("#birdfeeder_container").addClass("birdfeeder_start_pos");
+
+    $("#build_container").addClass("catch_start_pos");
+    $("#catch_container").addClass("catch_start_pos");
+
+    setTimeout(manMoves, 2000);
+    //    $(".startScene").on("click", manMoves)
 }
 
 function manMoves() {
     console.log("mand bevæger sig");
+    $("#main_char_container").removeClass("man_start_pos");
     $("#main_char_container").addClass("man_move_in");
     $("#main_char_sprite").addClass("manWalkcycle");
 
-    $(".fodreFugle").on("click", feedBirds);
+    //    $(".fodreFugle").on("click", feedBirds);
+    $("#bird_container").off("animationend", manMoves);
+    $("#main_char_container").on("animationend", feedBirds);
 }
 
 function feedBirds() {
@@ -87,7 +100,9 @@ function feedBirds() {
     $("#main_char_container").addClass("man_position_in");
     $("#main_char_sprite").addClass("feedBirds");
 
-    $(".fugleSpiser").on("click", birdsEating);
+    //    $(".fugleSpiser").on("click", birdsEating);
+    $("#main_char_container").off("animationend", feedBirds);
+    setTimeout(birdsEating, 3000);
 }
 
 function birdsEating() {
@@ -102,7 +117,8 @@ function birdsEating() {
     $("#villain_container").addClass("squirrel_move_in");
     $("#villain_sprite").addClass("squirrelWalkcycle");
 
-    $(".mandHopper").on("click", manJump);
+    //    $(".mandHopper").on("click", manJump);
+    $("#villain_container").on("animationend", manJump);
 }
 
 function manJump() {
@@ -113,7 +129,9 @@ function manJump() {
     $("#villain_container").removeClass("squirrel_move_in");
     $("#villain_sprite").removeClass("squirrelWalkcycle");
 
-    $(".egernForskraekker").on("click", squirrelScare);
+    //    $(".egernForskraekker").on("click", squirrelScare);
+    $("#villain_container").off("animationend", manJump);
+    $("#main_char_sprite").on("animationend", squirrelScare);
 }
 
 function squirrelScare() {
@@ -121,7 +139,9 @@ function squirrelScare() {
     $("#villain_container").addClass("squirrel_move_scare");
     $("#villain_sprite").addClass("squirrelWalkcycle");
 
-    $(".fugleFlygter").on("click", birdsFlee);
+    //    $(".fugleFlygter").on("click", birdsFlee);
+    $("#main_char_sprite").off("animationend", squirrelScare);
+    $("#villain_container").on("animationend", birdsFlee);
 }
 
 function birdsFlee() {
@@ -138,7 +158,9 @@ function birdsFlee() {
     $("#bird2_sprite").addClass("birdsFlee");
     $("#bird3_sprite").addClass("birdsFlee");
 
-    $(".fugleFlyverOp").on("click", birdsFlyUp);
+    //    $(".fugleFlyverOp").on("click", birdsFlyUp);
+    $("#villain_container").off("animationend", birdsFlee);
+    setTimeout(birdsFlyUp, 500);
 }
 
 function birdsFlyUp() {
@@ -155,9 +177,9 @@ function birdsFlyUp() {
 
     $("#main_char_sprite").removeClass("manJumps");
     $("#main_char_sprite").addClass("manStand");
+    setTimeout(squirrelAttack, 800);
 
-
-    $(".egernAngriber").on("click", squirrelAttack);
+    //    $(".egernAngriber").on("click", squirrelAttack);
 }
 
 function squirrelAttack() {
@@ -180,7 +202,8 @@ function squirrelAttack() {
     $("#bird2_container").addClass("birds_move_out");
     $("#bird3_container").addClass("birds_move_out");
 
-    $(".mandSur").on("click", manAngry);
+    //    $(".mandSur").on("click", manAngry);
+    $("#villain_container").on("animationend", manAngry);
 }
 
 function manAngry() {
@@ -193,7 +216,10 @@ function manAngry() {
     $("#main_char_sprite").removeClass("manStand");
     $("#main_char_sprite").addClass("manAngry");
 
-    $(".mandTaenker").on("click", manThinking);
+    //    $(".mandTaenker").on("click", manThinking);
+    $("#villain_container").off("animationend", manAngry);
+    $("#main_char_sprite").on("animationend", manThinking);
+
 }
 
 function manThinking() {
@@ -201,46 +227,184 @@ function manThinking() {
     $("#main_char_sprite").removeClass("manAngry");
     $("#main_char_sprite").addClass("manThinking");
 
-    $(".mandFaarIde").on("click", manIdea);
+    //    $(".mandFaarIde").on("click", manIdea);
+    $("#main_char_sprite").off("animationend", manThinking);
+    setTimeout(manIdea, 3000);
 }
+
 
 function manIdea() {
     console.log("mand får idé");
     $("#main_char_sprite").removeClass("manThinking");
     $("#main_char_sprite").addClass("manIdea");
-    $("#lightbulb_sprite").addClass("placeLightbulb");
+    $("#lightbulb_container").addClass("placeLightbulb");
 
-    $(".mandGaarUd").on("click", manMoveOut);
+    setTimeout(choosePath, 500);
+}
+
+function choosePath() {
+    console.log("choosePath loadet");
+    $("#build_container").removeClass("catch_start_pos");
+    $("#catch_container").removeClass("catch_start_pos");
+    $("#build_container").addClass("build_choice_position");
+    $("#catch_container").addClass("catch_choice_position");
+    $("#build_sprite").addClass("choiceBuild");
+    $("#catch_sprite").addClass("choiceCatch");
+
+    $("#build_container").on("click", manBuildBirdfeeder);
+    $("#catch_container").on("click", manGetNet);
+
+
+    //     $(".mandGaarUd").on("click", manMoveOut);
+}
+
+//HØJREBEN AF HISTORIEN
+
+function manGetNet() {
+    console.log("getNet loadet");
+    $("#main_char_sprite").removeClass("manIdea");
+    $("#main_char_container").removeClass("man_position_in");
+    $("#build_sprite").removeClass("choiceBuild");
+    $("#catch_sprite").removeClass("choiceCatch");
+    $("#build_container").off("click", manBuildBirdfeeder);
+    $("#catch_container").off("click", manGetNet);
+    $("#build_container").addClass("build_start_pos");
+    $("#catch_container").addClass("catch_start_pos");
+    $("#build_container").removeClass("build_choice_position");
+    $("#catch_container").removeClass("catch_choice_position");
+    $("#lightbulb_container").removeClass("placeLightbulb");
+    $("#main_char_container").addClass("man_move_out");
+    $("#main_char_sprite").addClass("manWalkcycle");
+    $("#main_char_container").on("animationend", moveToSquirrel);
+}
+
+function moveToSquirrel() {
+    console.log("moveToSquirrel loadet");
+    $("#build_sprite").removeClass("choiceBuild");
+    $("#catch_sprite").removeClass("choiceCatch");
+    $("#build").off("click", manBuildBirdfeeder);
+    $("#catch").off("click", manGetNet);
+    $("#build_container").addClass("build_start_pos");
+    $("#catch_container").addClass("catch_start_pos");
+
+    $("#lightbulb_container").removeClass("placeLightbulb");
+
+    $("#main_char_container").removeClass("man_move_out");
+    $("#main_char_sprite").removeClass("manWalkcycle");
+    $("#main_char_container").addClass("man_with_net_move");
+    $("#main_char_sprite").addClass("manNetWalkcycle");
+
+    $("#main_char_container").off("animationend", moveToSquirrel);
+
+    $("#main_char_container").on("animationend", atSquirrel);
+}
+
+function atSquirrel() {
+    console.log("ved egernet");
+    $("#main_char_container").removeClass("man_with_net_move");
+    $("#main_char_sprite").removeClass("manNetWalkcycle");
+    $("#main_char_container").addClass("man_position_catch");
+    $("#main_char_sprite").addClass("manCatchStand");
+
+    $("#main_char_container").off("animationend", atSquirrel);
+    myTimer = setTimeout(timetUd, 10000);
+
+    canClick();
+}
+
+function canClick() {
+    console.log("Can Click!");
+    $("#main_char_sprite").addClass("manCatch");
+    $("#main_char_sprite").removeClass("manCatchStand");
+
+    $("#villain_container").on("click", catchSquirrel);
+}
+
+function catchSquirrel() {
+    console.log("catchSquirrel loadet");
+    $("#main_char_sprite").removeClass("manCatchStand");
+    $("#villain_container").off("click", catchSquirrel);
+    catchCounter++;
+    console.log("du har klikket " + catchCounter);
+    if (catchCounter == 5) {
+        console.log("Super du har fanget egernet " + catchCounter);
+        harFangetEgernet();
+    } else {
+        console.log("catchCounter er ikke 5");
+        canClick();
+    }
 
 }
 
-function manMoveOut() {
+function harFangetEgernet() {
+    console.log("harFangetEgernet er loadet");
+    $("#main_char_sprite").removeClass("manCatch");
+    $("#main_char_sprite").addClass("manJumps");
+    $("#villain_sprite").addClass("squirrelCaged");
+
+    $("#main_char_sprite").on("animationend", gårUdMedEgernet);
+    clearTimeout(myTimer);
+}
+
+function gårUdMedEgernet() {
+    console.log("gårUdMedEgernet er loadet");
+    $("#main_char_sprite").removeClass("manJumps");
+    $("#main_char_container").addClass("man_move_with_squirrel");
+    $("#main_char_sprite").addClass("birdfeederWalkcycle");
+    $("#villain_container").addClass("squirrel_move_caged");
+}
+
+function timetUd() {
+    console.log("timetUd er loadet");
+    $("#main_char_sprite").removeClass("manCatch");
+    $("#main_char_container").addClass("man_move_gives_up");
+    $("#main_char_sprite").addClass("manNetWalkcycle");
+
+    $("#main_char_container").on("animationend", buildingBirdfeeder);
+}
+
+function manBuildBirdfeeder() {
     console.log("mand går ud");
     $("#main_char_sprite").removeClass("manIdea");
-    $("#lightbulb_sprite").removeClass("placeLightbulb");
+    $("#lightbulb_container").removeClass("placeLightbulb");
+    $("#main_char_container").removeClass("man_position_in");
+
 
     $("#main_char_container").addClass("man_move_out");
     $("#main_char_sprite").addClass("manWalkcycle");
+    $("#build_container").removeClass("build_choice_position");
+    $("#catch_container").removeClass("catch_choice_position");
+    $("#build_container").addClass("build_start_pos");
+    $("#catch_container").addClass("catch_start_pos");
 
-    $(".byggerFoderbraet").on("click", buildingBirdfeeder);
+
+
+    $("#build").off("click", manBuildBirdfeeder);
+    $("#catch").off("click", manGetNet);
+
+    $("#main_char_container").on("animationend", buildingBirdfeeder);
 }
 
 function buildingBirdfeeder() {
     console.log("bygger foderbræt");
-
-    $(".mandGaarMedFoderbraet").on("click", walkWithBirdfeeder);
+    $("#main_char_sprite").removeClass();
+    $("#main_char_container").removeClass();
+    $("#main_char_container").addClass("man_start_pos");
+    $("#main_char_container").off("animationend", buildingBirdfeeder);
+    //    HUSK! her skal det være lydanimationen som sender os videre!
+    setTimeout(walkWithBirdfeeder, 1000);
 }
 
 function walkWithBirdfeeder() {
     console.log("mand går ind med foderbræt");
-    $("#main_char_container").removeClass("man_move_out");
-    $("#main_char_sprite").removeClass("manWalkcycle");
+    $("#main_char_container").removeClass("man_start_pos");
     $("#main_char_container").addClass("man_move_birdfeeder");
     $("#main_char_sprite").addClass("birdfeederWalkcycle");
 
     $("#birdfeeder_container").addClass("move_Birdfeeder");
 
-    $(".placererFoderbraet").on("click", placingBirdfeeder);
+    //    $(".placererFoderbraet").on("click", placingBirdfeeder);
+    $("#main_char_container").on("animationend", placingBirdfeeder);
 
 }
 
@@ -254,7 +418,9 @@ function placingBirdfeeder() {
     $("#main_char_container").addClass("man_with_birdfeeder");
     $("#main_char_sprite").addClass("manStand");
 
-    $(".mandGårVæk").on("click", walkAway);
+    //    $(".mandGårVæk").on("click", walkAway);
+    $("#main_char_container").off("animationend", placingBirdfeeder);
+    setTimeout(walkAway, 1000);
 }
 
 function walkAway() {
@@ -264,7 +430,8 @@ function walkAway() {
     $("#main_char_container").addClass("man_move_away");
     $("#main_char_sprite").addClass("manWalkcycle");
 
-    $(".nyderDyrene").on("click", enjoyAnimals);
+    //    $(".nyderDyrene").on("click", enjoyAnimals);
+    $("#main_char_container").on("animationend", enjoyAnimals);
 }
 
 function enjoyAnimals() {
@@ -274,7 +441,10 @@ function enjoyAnimals() {
     $("#main_char_container").addClass("man_happy_position");
     $("#main_char_sprite").addClass("manHappy");
 
-    $(".fugleFlyverind").on("click", birdsComesBack);
+    //    $(".fugleFlyverind").on("click", birdsComesBack);
+    $("#main_char_container").off("animationend", enjoyAnimals);
+    setTimeout(birdsComesBack, 1000);
+
 }
 
 function birdsComesBack() {
@@ -292,7 +462,8 @@ function birdsComesBack() {
     $("#bird2_container").addClass("birds_move_in");
     $("#bird3_container").addClass("birds_move_in");
 
-    $(".fugleFlyverNed").on("click", birdsFliesDown);
+    //    $(".fugleFlyverNed").on("click", birdsFliesDown);
+    $("#bird1_container").on("animationend", birdsFliesDown);
 }
 
 function birdsFliesDown() {
@@ -310,7 +481,9 @@ function birdsFliesDown() {
     $("#bird2_container").addClass("birds_move_down");
     $("#bird3_container").addClass("birds_move_down");
 
-    $(".fugleLander").on("click", birdsLand);
+    //    $(".fugleLander").on("click", birdsLand);
+    $("#bird1_container").off("animationend", birdsFliesDown);
+    $("#bird1_container").on("animationend", birdsLand);
 }
 
 function birdsLand() {
@@ -328,7 +501,9 @@ function birdsLand() {
     $("#bird2_container").addClass("birds_position_landed");
     $("#bird3_container").addClass("birds_position_landed");
 
-    $(".egernkravler").on("click", squirrelCrawl);
+    //    $(".egernkravler").on("click", squirrelCrawl);
+    $("#bird1_container").off("animationend", birdsLand);
+    setTimeout(squirrelCrawl, 1500);
 }
 
 function squirrelCrawl() {
@@ -342,7 +517,8 @@ function squirrelCrawl() {
     $("#villain_container").addClass("squirrel_jumps_birdfeeder");
     $("#villain_sprite").addClass("squirrelJumpsBirdfeeder");
 
-    $(".mandHopper").on("click", manJumps);
+    //    $(".mandHopper").on("click", manJumps);
+    $("#villain_container").on("animationend", manJumps);
 }
 
 function manJumps() {
@@ -350,11 +526,14 @@ function manJumps() {
     $("#main_char_sprite").removeClass("manHappy");
     $("#main_char_sprite").addClass("manJumps");
 
-    $(".theEnd1").on("click", theEnd1);
+    //    $(".theEnd1").on("click", theEnd1);
+    $("#villain_container").off("animationend", manJumps);
+    $("#main_char_sprite").on("animationend", theEnd1);
 }
 
 function theEnd1() {
     console.log("mand går ud");
     $("#main_char_container").addClass("man_move_out");
     $("#main_char_sprite").addClass("manWalkcycle");
+    $("#main_char_sprite").off("animationend", theEnd1);
 }
