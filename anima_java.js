@@ -66,6 +66,13 @@ $(window).on("load", setScene);
 
 function setScene() {
     console.log("siden er loadet!");
+    $("#credits").addClass("credits_out");
+    $("#sky1_container").addClass("sky1_move");
+    $("#sky2_container").addClass("sky2_move");
+    $("#sky3_container").addClass("sky3_move");
+    $("#sky1_sprite").addClass("skyChangeCycle");
+    $("#sky2_sprite").addClass("skyChangeCycle");
+    $("#sky3_sprite").addClass("skyChangeCycle");
     $("#bird1_sprite").addClass("birdSinging");
     $("#bird2_sprite").addClass("birdSinging");
     $("#bird3_sprite").addClass("birdSinging");
@@ -77,6 +84,11 @@ function setScene() {
 
     $("#build_container").addClass("catch_start_pos");
     $("#catch_container").addClass("catch_start_pos");
+
+    $("#background_lyd")[0].play();
+    $("#background_lyd")[0].volume = 0.5;
+    $("#nynner_lyd")[0].play();
+    $("#nynner_lyd")[0].volume = 0.4;
 
     setTimeout(manMoves, 2000);
     //    $(".startScene").on("click", manMoves)
@@ -102,6 +114,10 @@ function feedBirds() {
 
     //    $(".fugleSpiser").on("click", birdsEating);
     $("#main_char_container").off("animationend", feedBirds);
+    $("#nynner_lyd")[0].volume = 0;
+    $("#fuglefroe_lyd")[0].play();
+    $("#fuglefroe_lyd")[0].volume = 0.4;
+
     setTimeout(birdsEating, 3000);
 }
 
@@ -132,6 +148,9 @@ function manJump() {
     //    $(".egernForskraekker").on("click", squirrelScare);
     $("#villain_container").off("animationend", manJump);
     $("#main_char_sprite").on("animationend", squirrelScare);
+
+    $("#happy_lyd")[0].play();
+    $("#happy_lyd")[0].volume = 0.4;
 }
 
 function squirrelScare() {
@@ -142,12 +161,18 @@ function squirrelScare() {
     //    $(".fugleFlygter").on("click", birdsFlee);
     $("#main_char_sprite").off("animationend", squirrelScare);
     $("#villain_container").on("animationend", birdsFlee);
+
+    $("#background_lyd")[0].volume = 0;
+    $("#suspense_lyd")[0].play();
+    $("#suspense_lyd")[0].volume = 0.1;
 }
 
 function birdsFlee() {
     console.log("fugle flygter");
     $("#villain_container").removeClass("squirrel_move_scare");
     $("#villain_sprite").removeClass("squirrelWalkcycle");
+
+    $("#villain_container").removeClass("villain_start_pos");
     $("#villain_container").addClass("squirrel_position_scare");
     $("#villain_sprite").addClass("squirrelScare");
 
@@ -220,6 +245,9 @@ function manAngry() {
     $("#villain_container").off("animationend", manAngry);
     $("#main_char_sprite").on("animationend", manThinking);
 
+    $("#angry_lyd")[0].play();
+    $("#angry_lyd")[0].volume = 0.4;
+
 }
 
 function manThinking() {
@@ -228,6 +256,11 @@ function manThinking() {
     $("#main_char_sprite").addClass("manThinking");
 
     //    $(".mandFaarIde").on("click", manIdea);
+
+    $("#angry_lyd")[0].volume = 0;
+    $("#thinking_lyd")[0].play();
+    $("#thinking_lyd")[0].volume = 0.4;
+
     $("#main_char_sprite").off("animationend", manThinking);
     setTimeout(manIdea, 3000);
 }
@@ -238,6 +271,10 @@ function manIdea() {
     $("#main_char_sprite").removeClass("manThinking");
     $("#main_char_sprite").addClass("manIdea");
     $("#lightbulb_container").addClass("placeLightbulb");
+
+    $("#thinking_lyd")[0].volume = 0;
+    $("#idea_lyd")[0].play();
+    $("#idea_lyd")[0].volume = 0.4;
 
     setTimeout(choosePath, 500);
 }
@@ -276,6 +313,8 @@ function manGetNet() {
     $("#main_char_container").addClass("man_move_out");
     $("#main_char_sprite").addClass("manWalkcycle");
     $("#main_char_container").on("animationend", moveToSquirrel);
+
+    $("#suspense_lyd")[0].volume = 0;
 }
 
 function moveToSquirrel() {
@@ -303,13 +342,29 @@ function atSquirrel() {
     console.log("ved egernet");
     $("#main_char_container").removeClass("man_with_net_move");
     $("#main_char_sprite").removeClass("manNetWalkcycle");
+    $("#villain_container").removeClass("squirrel_position_scare");
     $("#main_char_container").addClass("man_position_catch");
     $("#main_char_sprite").addClass("manCatchStand");
+
+    $("#villain_container").addClass("squirrelPuls");
+
 
     $("#main_char_container").off("animationend", atSquirrel);
     myTimer = setTimeout(timetUd, 10000);
 
-    canClick();
+    computerbestemmer();
+}
+
+function computerbestemmer() {
+    console.log("computerbestemmer loadet");
+    var tilfaeldigtTal = Math.random();
+    if (tilfaeldigtTal >= 0.5) {
+        console.log("her er mit tilfældige tal " + tilfaeldigtTal);
+        canClick();
+    } else {
+        console.log(tilfaeldigtTal);
+        harFangetEgernet();
+    }
 }
 
 function canClick() {
@@ -318,12 +373,13 @@ function canClick() {
     $("#main_char_sprite").removeClass("manCatchStand");
 
     $("#villain_container").on("click", catchSquirrel);
+    $("#suspense_lyd")[0].volume = 0.1;
 }
 
 function catchSquirrel() {
     console.log("catchSquirrel loadet");
     $("#main_char_sprite").removeClass("manCatchStand");
-    $("#villain_container").off("click", catchSquirrel);
+    $("#villain_container").off("click");
     catchCounter++;
     console.log("du har klikket " + catchCounter);
     if (catchCounter == 5) {
@@ -332,15 +388,32 @@ function catchSquirrel() {
     } else {
         console.log("catchCounter er ikke 5");
         canClick();
+        if (catchCounter <= 4) {
+            var move = Math.random() * 10 + 75;
+            $("#villain_container").css('left', move + 'vw');
+        } else {
+            $("#villain_container").css('left', '65vw');
+        }
     }
+
+    $("#netlyd_lyd")[0].play();
+    $("#netlyd_lyd")[0].volume = 0.4;
 
 }
 
 function harFangetEgernet() {
     console.log("harFangetEgernet er loadet");
     $("#main_char_sprite").removeClass("manCatch");
+    $("#villain_sprite").removeClass("squirrelStand");
+    $("#villain_container").removeClass("squirrelPuls");
     $("#main_char_sprite").addClass("manJumps");
     $("#villain_sprite").addClass("squirrelCaged");
+    $("#villain_container").addClass("squirrel_position_scare");
+
+    $("#happy_lyd")[0].play();
+    $("#happy_lyd")[0].volume = 0.4;
+    $("#suspense_lyd")[0].volume = 0;
+    $("#background_lyd")[0].volume = 0.5;
 
     $("#main_char_sprite").on("animationend", gårUdMedEgernet);
     clearTimeout(myTimer);
@@ -349,16 +422,28 @@ function harFangetEgernet() {
 function gårUdMedEgernet() {
     console.log("gårUdMedEgernet er loadet");
     $("#main_char_sprite").removeClass("manJumps");
+    $("#villain_container").removeClass("squirrel_position_scare");
     $("#main_char_container").addClass("man_move_with_squirrel");
     $("#main_char_sprite").addClass("birdfeederWalkcycle");
     $("#villain_container").addClass("squirrel_move_caged");
+
+    $("#nynner_lyd")[0].play();
+    $("#nynner_lyd")[0].volume = 0.4;
+
+
+    setTimeout(credits, 2000);
+    //    $("#main_char_container").on("animationend", credits);
 }
 
 function timetUd() {
     console.log("timetUd er loadet");
     $("#main_char_sprite").removeClass("manCatch");
+    $("#villain_container").removeClass("squirrelPuls");
+    $("#villain_container").addClass("squirrel_position_scare");
     $("#main_char_container").addClass("man_move_gives_up");
     $("#main_char_sprite").addClass("manNetWalkcycle");
+
+    $("#suspense_lyd")[0].volume = 0;
 
     $("#main_char_container").on("animationend", buildingBirdfeeder);
 }
@@ -376,11 +461,14 @@ function manBuildBirdfeeder() {
     $("#catch_container").removeClass("catch_choice_position");
     $("#build_container").addClass("build_start_pos");
     $("#catch_container").addClass("catch_start_pos");
-
-
+    $("#villain_container").addClass("squirrel_position_scare");
 
     $("#build").off("click", manBuildBirdfeeder);
     $("#catch").off("click", manGetNet);
+
+    $("#suspense_lyd")[0].volume = 0;
+    $("#nynner_lyd")[0].play();
+    $("#nynner_lyd")[0].volume = 0.4;
 
     $("#main_char_container").on("animationend", buildingBirdfeeder);
 }
@@ -391,8 +479,13 @@ function buildingBirdfeeder() {
     $("#main_char_container").removeClass();
     $("#main_char_container").addClass("man_start_pos");
     $("#main_char_container").off("animationend", buildingBirdfeeder);
+
+    $("#byggelyde_lyd")[0].play();
+    $("#byggelyde_lyd")[0].volume = 0.4;
+    $("#nynner_lyd")[0].volume = 0;
     //    HUSK! her skal det være lydanimationen som sender os videre!
-    setTimeout(walkWithBirdfeeder, 1000);
+
+    $("#byggelyde_lyd").on("ended", walkWithBirdfeeder);
 }
 
 function walkWithBirdfeeder() {
@@ -417,6 +510,8 @@ function placingBirdfeeder() {
     $("#main_char_sprite").removeClass("birdfeederWalkcycle");
     $("#main_char_container").addClass("man_with_birdfeeder");
     $("#main_char_sprite").addClass("manStand");
+
+    $("#background_lyd")[0].volume = 0.5;
 
     //    $(".mandGårVæk").on("click", walkAway);
     $("#main_char_container").off("animationend", placingBirdfeeder);
@@ -511,6 +606,7 @@ function squirrelCrawl() {
     $("#bird1_sprite").removeClass("birdsLand");
     $("#bird2_sprite").removeClass("birdsLand");
     $("#bird3_sprite").removeClass("birdsLand");
+    $("#villain_container").removeClass("squirrel_position_scare");
     $("#bird1_sprite").addClass("birdSinging");
     $("#bird2_sprite").addClass("birdSinging");
     $("#bird3_sprite").addClass("birdSinging");
@@ -533,7 +629,18 @@ function manJumps() {
 
 function theEnd1() {
     console.log("mand går ud");
+    $("#main_char_container").removeClass("man_happy_position");
+    $("#main_char_sprite").removeClass("manJumps");
     $("#main_char_container").addClass("man_move_out");
     $("#main_char_sprite").addClass("manWalkcycle");
     $("#main_char_sprite").off("animationend", theEnd1);
+    $("#main_char_container").on("animationend", credits);
+}
+
+function credits() {
+    console.log("credits loadet");
+    $("#credits").removeClass("credits_out");
+    $("#credits").addClass("credits_in");
+    $("#nynner_lyd")[0].volume = 0;
+    $("#background_lyd")[0].volume = 0;
 }

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex">
     <link rel="stylesheet" href="ani_style.css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <title>SquirrelHunt</title>
 </head>
 
@@ -42,6 +43,15 @@
 -->
     <div id="scene">
         <div id="baggrund"></div>
+        <div id="sky1_container" class="">
+            <div id="sky1_sprite" class=""></div>
+        </div>
+        <div id="sky2_container" class="">
+            <div id="sky2_sprite" class=""></div>
+        </div>
+        <div id="sky3_container" class="">
+            <div id="sky3_sprite" class=""></div>
+        </div>
         <div id="mellemgrund"></div>
         <div id="bird1_container" class="">
             <div id="bird1_sprite" class=""></div>
@@ -61,14 +71,31 @@
         <div id="lightbulb_container" class="">
             <div id="lightbulb_sprite" class=""></div>
         </div>
-        <div id="forgrund"></div>
         <div id="villain_container" class="">
             <div id="villain_sprite" class=""></div>
         </div>
+        <div id="forgrund"></div>
         <div id="build_container" class="">
             <div id="build_sprite" class=""></div>
         </div>
-        <div id="catch_container" class=""><div id="catch_sprite" class=""></div></div>
+        <div id="catch_container" class="">
+            <div id="catch_sprite" class=""></div>
+        </div>
+        <div id=credits class="">
+        </div>
+        <div>
+            <audio loop id="background_lyd" src="mp3/backgroundSound.mp3"></audio>
+            <audio loop id="suspense_lyd" src="mp3/bensound-theduel.mp3"></audio>
+            <audio id="angry_lyd" src="mp3/Angry.mp3"></audio>
+            <audio id="byggelyde_lyd" src="mp3/byggelyde.mp3"></audio>
+            <audio id="fuglefroe_lyd" src="mp3/fuglefroe_final_02.mp3"></audio>
+            <audio id="happy_lyd" src="mp3/happy.mp3"></audio>
+            <audio id="thinking_lyd" src="mp3/thinking.mp3"></audio>
+            <audio id="idea_lyd" src="mp3/idea.mp3"></audio>
+            <audio id="netlyd_lyd" src="mp3/netlyd.mp3"></audio>
+            <audio id="nynner_lyd" src="mp3/nynner.mp3"></audio>
+            <audio id="floejter_lyd" src="mp3/floejter.mp3"></audio>
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="anima_java.js"></script>
