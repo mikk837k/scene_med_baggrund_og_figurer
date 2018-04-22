@@ -1,0 +1,31 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fcd7a5;
+      }
+
+      .cls-2 {
+        font-size: 72px;
+        fill: #0ea1ca;
+        font-family: JosefinSans-Bold, Josefin Sans;
+        font-weight: 700;
+      }
+
+      .cls-3 {
+        letter-spacing: -0.02em;
+      }
+
+      .cls-4 {
+        letter-spacing: -0.01em;
+      }
+
+      .cls-5 {
+        letter-spacing: -0.06em;
+      }
+    </style>
+  </defs>
+  <title>Artboard 1</title>
+  <rect class="cls-1" width="1920" height="1080"/>
+  <text class="cls-2" transform="translate(460.21 329.73)">La<tspan class="cls-3" x="90.36" y="0">v</tspan><tspan x="127.73" y="0">et af Mik</tspan><tspan class="cls-4" x="446.25" y="0">k</tspan><tspan x="484.84" y="0">el L</tspan><tspan class="cls-3" x="614.66" y="0">o</tspan><tspan x="654.69" y="0">w Madsen</tspan><tspan x="60.08" y="172.8">Musik: www.bensound.com</tspan><tspan x="166.86" y="259.2">(</tspan><tspan class="cls-5" x="196.23" y="259.2">T</tspan><tspan class="cls-3" x="234.11" y="259.2">r</tspan><tspan x="262.55" y="259.2">ack - “The Duel”)</tspan></text>
+</svg>

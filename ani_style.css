@@ -9,7 +9,7 @@ ul {
     display: flex;
     flex-direction: row;
     list-style-type: none;
-    margin: 5;
+    margin: 0;
     padding: 0;
     width: 100%;
     top: 0;
@@ -17,6 +17,7 @@ ul {
     background-color: #47AD2E;
     font-family: 'Josefin Sans', sans-serif;
 }
+
 
 li {
     float: left;
@@ -39,6 +40,44 @@ a:hover {
     background-color: rgba(46, 134, 193, 0.9);
 }
 
+/********** Knap til start side **********/
+
+#startSide {
+    width: 100vw;
+    height: 56.25vw;
+    position: relative;
+}
+
+#startSide img {
+    position: absolute;
+    width: 100%;
+}
+
+#startSide .button {
+    position: absolute;
+    display: inline-block;
+    background-color: #0EA1CA;
+    width: 15vw;
+    height: 7vw;
+    left: 47vw;
+    bottom: 10vw;
+    margin: 3px;
+    border-style: outset;
+    border-color: #0B7998;
+    font-size: 3vw;
+    box-shadow: 0px 5px 5px rgba(71, 74, 75, 0.52);
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+#startSide .button:active {
+    transform: translateY(4px);
+}
+
+
+
 /* ------- Scenen------ */
 
 #scene {
@@ -60,7 +99,7 @@ a:hover {
 #mellemgrund {
     width: 100vw;
     height: 56.25vw;
-    background-image: url(Animations_scenes/mellemgrund.svg);
+    background-image: url(Animations_scenes/mellemgrund_final.svg);
     background-size: cover;
     background-size: 100%;
     position: absolute;
@@ -73,6 +112,28 @@ a:hover {
     background-size: cover;
     background-size: 100%;
     position: absolute;
+    pointer-events: none;
+}
+
+.credits_in {
+    width: 100vw;
+    height: 56.25vw;
+    background-image: url(Animations_scenes/Artboard%201.svg);
+    background-size: cover;
+    background-size: 100%;
+    position: absolute;
+    pointer-events: none;
+}
+
+.credits_out {
+    width: 100vw;
+    height: 56.25vw;
+    background-image: url(Animations_scenes/Artboard%201.svg);
+    background-size: cover;
+    background-size: 100%;
+    position: absolute;
+    pointer-events: none;
+    display: none;
 }
 
 /* ------- Scenen - Slut ------ */
@@ -113,7 +174,7 @@ a:hover {
 #main_char_sprite {
     width: 20vw;
     height: 20vw;
-    background-image: url(Animations_figurer/Hovedkarakter/mainCharSpritesheet%204.svg);
+    background-image: url(Animations_figurer/Hovedkarakter/mainCharSpritesheet_final.svg);
     background-size: 900% 900%;
     position: absolute;
 }
@@ -350,8 +411,8 @@ a:hover {
 }
 
 .man_position_catch {
-        left: 50vw;
-        bottom: 43vw;
+    left: 50vw;
+    bottom: 43vw;
 }
 
 .manCatchStand {
@@ -381,7 +442,7 @@ a:hover {
     animation-fill-mode: both;
 }
 
-@keyframes man_move_with_squirrel_kf{
+@keyframes man_move_with_squirrel_kf {
     0% {
         left: 50vw;
         bottom: 43vw;
@@ -389,7 +450,7 @@ a:hover {
 
     100% {
         left: 110vw;
-        bottom: 43vw;
+        bottom: 25vw;
     }
 }
 
@@ -424,7 +485,7 @@ a:hover {
 #bird1_sprite {
     width: 7.81vw;
     height: 5.21vw;
-    background-image: url(Animations_figurer/Fugle/Fugle.svg);
+    background-image: url(Animations_figurer/Fugle/Fugle_final.svg);
     background-size: 400% 700%;
     position: absolute;
     bottom: -33vw;
@@ -438,7 +499,7 @@ a:hover {
 #bird2_sprite {
     width: 7.81vw;
     height: 5.21vw;
-    background-image: url(Animations_figurer/Fugle/Fugle.svg);
+    background-image: url(Animations_figurer/Fugle/Fugle_final.svg);
     background-size: 400% 700%;
     position: absolute;
     bottom: -35vw;
@@ -453,7 +514,7 @@ a:hover {
 #bird3_sprite {
     width: 7.81vw;
     height: 5.21vw;
-    background-image: url(Animations_figurer/Fugle/Fugle.svg);
+    background-image: url(Animations_figurer/Fugle/Fugle_final.svg);
     background-size: 400% 700%;
     position: absolute;
     bottom: -28vw;
@@ -728,7 +789,7 @@ a:hover {
 #villain_sprite {
     width: 13.02vw;
     height: 10.41vw;
-    background-image: url(Animations_figurer/Villain/SquirrelSpritesheet%203.svg);
+    background-image: url(Animations_figurer/Villain/SquirrelSpritesheet_final.svg);
     background-size: 500% 700%;
 }
 
@@ -768,13 +829,13 @@ a:hover {
 
     100% {
         right: 20vw;
-        top: 20vw;
+        top: 23vw;
     }
 }
 
 .squirrel_position_scare {
     right: 20vw;
-    top: 20vw;
+    top: 23vw;
 }
 
 .squirrelStand {
@@ -809,7 +870,7 @@ a:hover {
 
     0% {
         right: 20vw;
-        top: 20vw;
+        top: 23vw;
     }
     25% {
         right: 25vw;
@@ -821,12 +882,12 @@ a:hover {
     }
     70% {
         right: 35vw;
-        top: 20vw;
+        top: 23vw;
     }
 
     100% {
         right: 20vw;
-        top: 20vw;
+        top: 23vw;
     }
 
 }
@@ -859,7 +920,7 @@ a:hover {
 
     0% {
         right: 20vw;
-        top: 20vw;
+        top: 23vw;
     }
 
     100% {
@@ -889,7 +950,7 @@ a:hover {
 
 .squirrel_position_catch {
     left: 65vw;
-    top:20vw;
+    top: 23vw;
     /*    transform: translate(-40vw, 10vw)*/
 }
 
@@ -902,25 +963,46 @@ a:hover {
     animation-duration: 1.5s;
     animation-iteration-count: 1;
     animation-fill-mode: both;
+    left: 0 !important;
 }
 
 @keyframes squirrel_move_caged_kf {
 
 
     0% {
-        right: 20vw;
-        top: 20vw;
+        left: 65vw;
+        top: 23vw;
     }
 
     100% {
-        right: -20vw;
-        top: 20vw;
+        left: 110vw;
+        top: 35vw;
     }
 
 }
 
 .squirrelCaged {
     background-position: 0% -600%;
+}
+
+.squirrelPuls {
+    animation: puls_kf 0.5s infinite alternate linear;
+    cursor: crosshair;
+    /*
+    left: 65vw;
+    top: 23vw;
+*/
+    right: 20vw;
+    top: 23vw;
+}
+
+@keyframes puls_kf {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.8);
+    }
 }
 
 
@@ -989,16 +1071,129 @@ a:hover {
     bottom: 38vw;
 }
 
+/******* SKYER ********/
+
+#sky1_container {
+    position: absolute;
+}
+
+#sky1_sprite {
+    width: 13.02vw;
+    height: 5vw;
+    background-image: url(Animations_figurer/sky/Artboard%204.svg);
+    background-size: 400% 100%;
+    position: absolute;
+}
+
+.sky1_move {
+    animation-name: sky_move_kf;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+}
+
+@keyframes sky_move_kf {
+    0% {
+        top: 1vw;
+        right: 10vw;
+    }
+
+    100% {
+        top: 1vw;
+        right: 100vw;
+    }
+}
+
+.skyChangeCycle {
+    animation-name: skyChangeCycle_kf;
+    animation-duration: 1s;
+    animation-timing-function: steps(4);
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+@keyframes skyChangeCycle_kf {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -400% 0%;
+    }
+}
+
+#sky2_container {
+    position: absolute;
+}
+
+#sky2_sprite {
+    width: 13.02vw;
+    height: 5vw;
+    background-image: url(Animations_figurer/sky/Artboard%204.svg);
+    background-size: 400% 100%;
+    position: absolute;
+}
+
+
+.sky2_move {
+    animation-name: sky2_move_kf;
+    animation-duration: 80s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+}
+
+@keyframes sky2_move_kf {
+    0% {
+        top: 0vw;
+        right: 0vw;
+    }
+
+    100% {
+        top: 0vw;
+        right: 110vw;
+    }
+}
+
+#sky3_container {
+    position: absolute;
+}
+
+#sky3_sprite {
+    width: 13.02vw;
+    height: 5vw;
+    background-image: url(Animations_figurer/sky/Artboard%204.svg);
+    background-size: 400% 100%;
+    position: absolute;
+}
+
+.sky3_move {
+    animation-name: sky3_move_kf;
+    animation-duration: 40s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+}
+
+@keyframes sky3_move_kf {
+    0% {
+        top: 1vw;
+        right: -10vw;
+    }
+
+    100% {
+        top: 1vw;
+        right: 120vw;
+    }
+}
+
 /*********** CHOOSE PATH *********/
 
 #build_container {
     position: absolute;
 }
+
 #build_sprite {
     width: 7.81vw;
     height: 7.81vw;
     background-image: url(Animations_figurer/props/Artboard%202.svg);
-    background-color: red;
     background-size: 200% 100%;
 }
 
@@ -1013,7 +1208,18 @@ a:hover {
 }
 
 .choiceBuild {
-        background-position: 0% -100%;
+    background-position: 0% -100%;
+    animation: choiceBuild_kf 0.5s infinite alternate linear;
+    cursor: pointer;
+}
+
+@keyframes choiceBuild_kf {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.8);
+    }
 }
 
 #catch_container {
@@ -1039,5 +1245,16 @@ a:hover {
 }
 
 .choiceCatch {
-        background-position: -100% -200%;
+    background-position: -100% -200%;
+    animation: choiceCatch_kf 0.5s infinite alternate linear;
+    cursor: pointer;
+}
+
+@keyframes choiceCatch_kf {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.8);
+    }
 }
