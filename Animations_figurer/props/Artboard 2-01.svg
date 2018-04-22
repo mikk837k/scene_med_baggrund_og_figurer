@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #182fb7;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 3px;
+      }
+
+      .cls-4 {
+        fill: #fabe78;
+      }
+
+      .cls-5 {
+        fill: #f7931e;
+      }
+
+      .cls-6 {
+        fill: #f9a94b;
+      }
+
+      .cls-7 {
+        fill: #ae5032;
+      }
+
+      .cls-8 {
+        fill: #442d1d;
+      }
+
+      .cls-9 {
+        fill: #875a39;
+      }
+
+      .cls-10 {
+        fill: #a09a8c;
+      }
+    </style>
+  </defs>
+  <title>Artboard 2</title>
+  <g id="Layer_4" data-name="Layer 4">
+    <rect class="cls-1" width="150" height="150"/>
+    <g>
+      <ellipse class="cls-2" cx="75" cy="65.5" rx="67" ry="60.5"/>
+      <circle class="cls-2" cx="119.5" cy="122.5" r="7.5"/>
+      <circle class="cls-2" cx="130" cy="133" r="5"/>
+      <circle class="cls-2" cx="139" cy="142" r="4"/>
+      <circle class="cls-2" cx="25.5" cy="33.5" r="9.5"/>
+      <circle class="cls-2" cx="23.5" cy="96.5" r="9.5"/>
+      <circle class="cls-2" cx="115.5" cy="18.5" r="9.5"/>
+      <circle class="cls-2" cx="125.5" cy="99.5" r="9.5"/>
+      <circle class="cls-2" cx="68.5" cy="118.5" r="9.5"/>
+      <circle class="cls-2" cx="56.5" cy="11.5" r="9.5"/>
+      <circle class="cls-2" cx="132.5" cy="52.5" r="9.5"/>
+      <circle class="cls-2" cx="22.5" cy="79.5" r="14.5"/>
+      <circle class="cls-2" cx="39.5" cy="23.5" r="14.5"/>
+      <circle class="cls-2" cx="110.5" cy="100.5" r="14.5"/>
+      <circle class="cls-2" cx="130.5" cy="66.5" r="14.5"/>
+      <circle class="cls-2" cx="53.5" cy="115.5" r="14.5"/>
+      <circle class="cls-2" cx="38.5" cy="101.5" r="14.5"/>
+      <circle class="cls-2" cx="71.5" cy="16.5" r="14.5"/>
+      <circle class="cls-2" cx="89.5" cy="16.5" r="14.5"/>
+      <circle class="cls-2" cx="123.5" cy="35.5" r="14.5"/>
+      <circle class="cls-2" cx="15.5" cy="63.5" r="14.5"/>
+      <circle class="cls-2" cx="20.5" cy="48.5" r="14.5"/>
+      <circle class="cls-2" cx="85.5" cy="110.5" r="20.5"/>
+      <circle class="cls-2" cx="123.5" cy="81.5" r="20.5"/>
+    </g>
+    <rect class="cls-3" x="55.53" y="45.63" width="35.95" height="17.6"/>
+    <g>
+      <circle class="cls-4" cx="73.12" cy="60.96" r="3.27"/>
+      <ellipse class="cls-4" cx="81.67" cy="61.47" rx="9.3" ry="3.77"/>
+      <ellipse class="cls-4" cx="65.58" cy="61.47" rx="9.3" ry="3.77"/>
+      <circle class="cls-4" cx="61.56" cy="59.96" r="3.27"/>
+      <ellipse class="cls-4" cx="83.43" cy="59.96" rx="5.03" ry="3.27"/>
+      <path class="cls-4" d="M59.8,61a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/>
+      <path class="cls-5" d="M61.14,60.7a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/>
+      <path class="cls-5" d="M64.49,61.21a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/>
+      <path class="cls-5" d="M61.81,59a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/>
+      <path class="cls-5" d="M68.85,61a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/>
+      <path class="cls-5" d="M66.17,59.7a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/>
+      <path class="cls-5" d="M59.3,61.37a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/>
+      <path class="cls-5" d="M71.87,61a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/>
+      <path class="cls-5" d="M74.38,60a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/>
+      <path class="cls-5" d="M76.73,62.05a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/>
+      <path class="cls-5" d="M79.07,60.54a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/>
+      <path class="cls-5" d="M82.09,61.88a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/>
+      <path class="cls-5" d="M83.6,59.36a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/>
+      <path class="cls-5" d="M85.78,61.54a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z"/>
+    </g>
+    <g>
+      <polygon class="cls-6" points="73.37 19.02 50.75 45.63 95.98 45.63 73.37 19.02"/>
+      <polygon class="cls-6" points="73.22 24.44 77.9 18.71 68.54 18.71 73.22 24.44"/>
+      <path class="cls-6" d="M73.38,45.38H96c0,1.79-10.21,3.27-22.62,3.27s-22.63-1.48-22.63-3.27v0Z"/>
+    </g>
+    <rect class="cls-7" x="70.36" y="20.99" width="5.53" height="2.01" rx="1.01" ry="1.01"/>
+    <ellipse class="cls-8" cx="72.87" cy="107.97" rx="18.1" ry="5.03"/>
+    <rect class="cls-9" x="50.5" y="61.47" width="44.75" height="5.03" rx="2.51" ry="2.51"/>
+    <rect class="cls-9" x="50.5" y="83.09" width="44.75" height="5.03" rx="2.51" ry="2.51" transform="translate(158.47 12.73) rotate(90)"/>
+  </g>
+  <g id="Layer_3" data-name="Layer 3">
+    <rect class="cls-1" x="150" width="150" height="150" transform="translate(450 150) rotate(-180)"/>
+    <g>
+      <ellipse class="cls-2" cx="225" cy="65.5" rx="67" ry="60.5"/>
+      <circle class="cls-2" cx="180.5" cy="122.5" r="7.5"/>
+      <circle class="cls-2" cx="170" cy="133" r="5"/>
+      <circle class="cls-2" cx="161" cy="142" r="4"/>
+      <circle class="cls-2" cx="274.5" cy="33.5" r="9.5"/>
+      <circle class="cls-2" cx="276.5" cy="96.5" r="9.5"/>
+      <circle class="cls-2" cx="184.5" cy="18.5" r="9.5"/>
+      <circle class="cls-2" cx="174.5" cy="99.5" r="9.5"/>
+      <circle class="cls-2" cx="231.5" cy="118.5" r="9.5"/>
+      <circle class="cls-2" cx="243.5" cy="11.5" r="9.5"/>
+      <circle class="cls-2" cx="167.5" cy="52.5" r="9.5"/>
+      <circle class="cls-2" cx="277.5" cy="79.5" r="14.5"/>
+      <circle class="cls-2" cx="260.5" cy="23.5" r="14.5"/>
+      <circle class="cls-2" cx="189.5" cy="100.5" r="14.5"/>
+      <circle class="cls-2" cx="169.5" cy="66.5" r="14.5"/>
+      <circle class="cls-2" cx="246.5" cy="115.5" r="14.5"/>
+      <circle class="cls-2" cx="261.5" cy="101.5" r="14.5"/>
+      <circle class="cls-2" cx="228.5" cy="16.5" r="14.5"/>
+      <circle class="cls-2" cx="210.5" cy="16.5" r="14.5"/>
+      <circle class="cls-2" cx="176.5" cy="35.5" r="14.5"/>
+      <circle class="cls-2" cx="284.5" cy="63.5" r="14.5"/>
+      <circle class="cls-2" cx="279.5" cy="48.5" r="14.5"/>
+      <circle class="cls-2" cx="214.5" cy="110.5" r="20.5"/>
+      <circle class="cls-2" cx="176.5" cy="81.5" r="20.5"/>
+    </g>
+    <g>
+      <rect class="cls-9" x="174.5" y="61.42" width="62.42" height="2.74" rx="1.37" ry="1.37" transform="translate(-9.3 57.17) rotate(-15.48)"/>
+      <ellipse class="cls-9" cx="250.94" cy="50.36" rx="21.03" ry="1.83" transform="matrix(0.95, -0.31, 0.31, 0.95, -3.17, 80.92)"/>
+      <path class="cls-10" d="M252.76,51.09,270.68,44c1.41,4.83-4.07,16.19-5.17,18.7s-9.46,14.83-9.46,14.83-3.68,9.48-7.63,10.64c-.44.13-6.08,17.26-13.2-1.76-2-6,1.44-6.11-.75-14.3-.43-7.25,3.62-10.93,2.06-16.25l-.21-.69Z"/>
+    </g>
+  </g>
+</svg>
